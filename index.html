@@ -17,6 +17,7 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html,body{overflow-x:clip}
 body{font-family:var(--sans);font-size:16px;line-height:1.6;color:var(--ink);background:var(--ivory);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{display:block;max-width:100%}
 a{color:inherit}
@@ -89,7 +90,8 @@ main{padding-bottom:20px}
 .group h2{font-family:var(--serif);font-weight:600;font-size:clamp(28px,4vw,36px);line-height:1.1;color:var(--plum)}
 .group h2 em{font-style:italic;color:var(--gold);font-weight:500}
 .group .sub{font-size:13.5px;color:var(--mut);max-width:520px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(320px,100%),1fr));gap:16px}
+.card{min-width:0}
 .card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:22px 22px 20px;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(62,51,85,.04)}
 .meta{display:flex;justify-content:space-between;gap:12px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--lav)}
 .meta .km{letter-spacing:.02em;text-transform:none;font-weight:500;white-space:nowrap;color:var(--mut)}
@@ -98,7 +100,8 @@ main{padding-bottom:20px}
 .sched{list-style:none;margin:16px 0 0;border-top:1px solid var(--line)}
 .sched li{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
 .sched .d{font-weight:600;color:var(--ink)}
-.sched .t{font-variant-numeric:tabular-nums;font-weight:600;color:var(--plum);white-space:nowrap;text-align:right}
+.sched .t{font-variant-numeric:tabular-nums;font-weight:600;color:var(--plum);text-align:right;min-width:0}
+.sched .d{flex:0 0 auto;max-width:50%}
 .sched li.hit .d::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--gold);margin-right:8px;vertical-align:middle}
 .obs{font-size:14px;line-height:1.5;color:var(--mut);margin-top:12px;font-style:normal}
 .addr{display:flex;gap:10px;font-size:14px;line-height:1.5;color:var(--ink);margin-top:14px}
